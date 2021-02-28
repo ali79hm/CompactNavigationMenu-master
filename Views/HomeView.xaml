@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="CompactNavigationMenu.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:vm="clr-namespace:CompactNavigationMenu.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="410" d:DesignWidth="645">
+    <UserControl.DataContext>
+        <vm:HomeViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+
+
+        <TextBlock FontSize="15" FontWeight="Bold" 
+                       VerticalAlignment="Top" 
+                       Foreground="Black"
+                       Text=": تعداد ویدئو ها " Margin="514,17,0,0" HorizontalAlignment="Left" Width="114" RenderTransformOrigin="0.5,0.5" Height="29">
+        </TextBlock>
+        <TextBox x:Name="videoNumber" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="411,14,0,0" 
+                 Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="24" materialDesign:HintAssist.Hint="number"
+                 materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="Padding" Value="1,1.5,0,1" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBlock FontSize="15" FontWeight="Bold" 
+                       VerticalAlignment="Top" 
+                       Foreground="Black"
+                       Text=": تعداد پروژه ها " Margin="286,16,0,0" RenderTransformOrigin="0.5,0.5" Height="29" HorizontalAlignment="Left" Width="114"/>
+        <TextBox x:Name="projectNumber" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="176,14,0,0"
+                 Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="24" materialDesign:HintAssist.Hint="number"
+                 materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="Padding" Value="1,1.5,0,1" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBlock FontSize="15" FontWeight="Bold" 
+            VerticalAlignment="Top" 
+            Foreground="Black"
+            Text=": میزان ویدئو دیده شده " Margin="471,64,0,0" HorizontalAlignment="Left" Width="150" RenderTransformOrigin="0.5,0.5" Height="29"/>
+        <TextBox x:Name="compVideoNumber" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="366,63,0,0" 
+                 Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="24" materialDesign:HintAssist.Hint="number" 
+                 materialDesign:HintAssist.IsFloating="True" RenderTransformOrigin="0.513,0.633" Padding="1,1.5,0,1" PreviewTextInput="NumberValidationTextBox">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <RadioButton x:Name="RDPersent" Content="درصد" HorizontalAlignment="Left" Margin="299,67,0,0" VerticalAlignment="Top" Checked="RDPersent_Checked"/>
+        <RadioButton x:Name="RdNumber" IsChecked="True" Content="تعداد" HorizontalAlignment="Left" Margin="243,68,0,0" VerticalAlignment="Top" Checked="RdNumber_Checked"/>
+
+        <TextBlock FontSize="15" FontWeight="Bold" 
+            VerticalAlignment="Top" 
+            Foreground="Black"
+            Text=": درصد پروژه انجام شده " Margin="473,109,0,0" HorizontalAlignment="Left" Width="151" RenderTransformOrigin="0.5,0.5" Height="29"/>
+        <TextBox x:Name="compProjectNumber" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="362,111,0,0" 
+                 Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="24" materialDesign:HintAssist.Hint="number"
+                 materialDesign:HintAssist.IsFloating="True" Padding="12,1.5,0,1" TextChanged="compProjectNumber_TextChanged" PreviewTextInput="NumberValidationTextBox">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="Padding" Value="1,1.5,0,1" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Button x:Name="calcBtn" Content="محــــــــــاســــبـــه" HorizontalAlignment="Left" Margin="31,155,0,0" VerticalAlignment="Top" Height="22" Width="571" Click="calcBtn_Click" TextElement.FontWeight="Bold">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="1,1" StartPoint="0,1">
+                    <GradientStop Color="#FF0AF5F9" Offset="1"/>
+                    <GradientStop Color="#FF9B32ED"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="90" Margin="29,201,0,0" VerticalAlignment="Top" Width="575"/>
+        <TextBlock x:Name="outputText" FontSize="15" FontWeight="Bold" 
+            VerticalAlignment="Top" 
+            Foreground="Black"
+            FlowDirection="RightToLeft"
+            TextAlignment="Left"
+            TextWrapping="Wrap"
+            Text="" Margin="33,206,0,0" HorizontalAlignment="Left" Width="566" RenderTransformOrigin="0.5,0.5" Height="82"/>
+        <TextBlock x:Name="percentLable" FontSize="9" FontWeight="Bold" 
+            VerticalAlignment="Top" 
+            Foreground="Black"
+            Visibility ="Hidden"
+            Text="%" Margin="439,69,0,0" HorizontalAlignment="Left" Width="12" RenderTransformOrigin="0.5,0.5" Height="13"/>
+        <TextBlock x:Name="percentLable2" FontSize="9" FontWeight="Bold" 
+            VerticalAlignment="Top" 
+            Foreground="Black"
+            Text="%" Margin="436,117,0,0" HorizontalAlignment="Left" Width="12" RenderTransformOrigin="0.406,0.646" Height="13"/>
+        <TextBlock x:Name="outputText_Copy" FontSize="13" FontWeight="Medium" 
+            VerticalAlignment="Top" 
+            Foreground="Black"
+            FlowDirection="RightToLeft"
+            TextAlignment="Left"
+            TextWrapping="Wrap"
+            Text="چند نکته &#x0a; => حداکثر جریمه 30 هزار تومان تعین شده &#x0a; => به درصد های موفقیت بالای 85 درصد جریمه تعلق نمیگیرد &#x0a;=> ضریب پروژه 5 برابر ویدئو است &#x0a;=> درصد پروژه بر حسب تعداد تیتر های اجباری انجام شده محاسبه میشود" Margin="32,300,0,0" HorizontalAlignment="Left" Width="566" RenderTransformOrigin="0.5,0.5" Height="97"/>
+    </Grid>
+</UserControl>
+    
+    
+    
