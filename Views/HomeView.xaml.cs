@@ -113,8 +113,9 @@ namespace CompactNavigationMenu.Views
                         return 3;
                     }
             }
-            catch (Exception)
+            catch (Exception errroe)
             {
+                MessageBox.Show(errroe.ToString(), "خطا", MessageBoxButton.OK, MessageBoxImage.Error);
                 return 4;
             }
             return 0;
@@ -138,7 +139,6 @@ namespace CompactNavigationMenu.Views
             }
         }
 
-        private void compProjectNumber_TextChanged(object sender, TextChangedEventArgs e) { }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
@@ -154,6 +154,27 @@ namespace CompactNavigationMenu.Views
             temp = window.answer;
             compProjectNumber.Text = temp;
             
+        }
+
+
+        private void videoNumber_GotFocus_1(object sender, RoutedEventArgs e)
+        {
+            videoNumber.Text = "";
+        }
+
+        private void projectNumber_GotFocus(object sender, RoutedEventArgs e)
+        {
+            projectNumber.Text = "";
+        }
+
+        private void compVideoNumber_GotFocus(object sender, RoutedEventArgs e)
+        {
+            compVideoNumber.Text = "";
+        }
+
+        private void compProjectNumber_GotFocus(object sender, RoutedEventArgs e)
+        {
+            compProjectNumber.Text = "";
         }
     }
 }

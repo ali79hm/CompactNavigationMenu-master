@@ -20,7 +20,7 @@ namespace CompactNavigationMenu
     public partial class percentcalc : Window
     {
         static double ans;
-        public string answer { get { return ans.ToString(); } } 
+        public string answer { get { return ans.ToString(CultureInfo.InvariantCulture.NumberFormat); } } 
         public percentcalc()
         {
             InitializeComponent();

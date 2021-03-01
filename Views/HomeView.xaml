@@ -22,7 +22,7 @@
         </TextBlock>
         <TextBox x:Name="videoNumber" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="411,14,0,0" 
                  Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="24" materialDesign:HintAssist.Hint="number"
-                 materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox">
+                 materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox" GotFocus="videoNumber_GotFocus_1">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>
@@ -37,7 +37,7 @@
                        Text=": تعداد پروژه ها " Margin="286,16,0,0" RenderTransformOrigin="0.5,0.5" Height="29" HorizontalAlignment="Left" Width="114"/>
         <TextBox x:Name="projectNumber" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="176,14,0,0"
                  Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="24" materialDesign:HintAssist.Hint="number"
-                 materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox">
+                 materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox" GotFocus="projectNumber_GotFocus">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>
@@ -52,7 +52,7 @@
             Text=": میزان ویدئو دیده شده " Margin="471,64,0,0" HorizontalAlignment="Left" Width="150" RenderTransformOrigin="0.5,0.5" Height="29"/>
         <TextBox x:Name="compVideoNumber" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="366,63,0,0" 
                  Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="24" materialDesign:HintAssist.Hint="number" 
-                 materialDesign:HintAssist.IsFloating="True" RenderTransformOrigin="0.513,0.633" Padding="1,1.5,0,1" PreviewTextInput="NumberValidationTextBox">
+                 materialDesign:HintAssist.IsFloating="True" RenderTransformOrigin="0.513,0.633" Padding="1,1.5,0,1" PreviewTextInput="NumberValidationTextBox" GotFocus="compVideoNumber_GotFocus">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>
@@ -68,7 +68,7 @@
             Text=": درصد پروژه انجام شده " Margin="473,109,0,0" HorizontalAlignment="Left" Width="151" RenderTransformOrigin="0.5,0.5" Height="29"/>
         <TextBox x:Name="compProjectNumber" FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="362,111,0,0" 
                  Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="24" materialDesign:HintAssist.Hint="number"
-                 materialDesign:HintAssist.IsFloating="True" Padding="12,1.5,0,1" TextChanged="compProjectNumber_TextChanged" PreviewTextInput="NumberValidationTextBox">
+                 materialDesign:HintAssist.IsFloating="True" Padding="12,1.5,0,1" PreviewTextInput="NumberValidationTextBox" GotFocus="compProjectNumber_GotFocus">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>
