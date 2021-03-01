@@ -14,7 +14,7 @@
                        Text=": تعداد تیتر اجباری " Margin="148,16,0,0" RenderTransformOrigin="0.5,0.5" Height="19" HorizontalAlignment="Left" Width="99"/>
         <TextBox x:Name="maxsubject" FlowDirection="RightToLeft" Margin="14,15,0,0" 
                  Text="" TextWrapping="Wrap" materialDesign:HintAssist.Hint="number" 
-                 materialDesign:HintAssist.IsFloating="True" RenderTransformOrigin="0.513,0.633" Padding="1,1,0,1" PreviewTextInput="NumberValidationTextBox" FontSize="12" HorizontalAlignment="Left" Width="108" Height="22" VerticalAlignment="Top">
+                 materialDesign:HintAssist.IsFloating="True" RenderTransformOrigin="0.513,0.633" Padding="1,1,0,1" PreviewTextInput="NumberValidationTextBox" FontSize="12" HorizontalAlignment="Left" Width="108" Height="22" VerticalAlignment="Top" TextChanged="maxsubject_TextChanged">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>

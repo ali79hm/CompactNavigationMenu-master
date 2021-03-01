@@ -1,4 +1,4 @@
-# CompactNavigationMenu
- A WPF sample of a compact navigation menu created using a ListBox.
+# محاسبه گر جریمه
+ یک برنامه ساده برای محاسبه جریمه تاخیر در انجام ددلاین ها 
 
-![Screengrab](Screengrab.gif)
+![Screengrab](Screengrab.png)

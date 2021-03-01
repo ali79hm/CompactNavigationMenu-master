@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -27,17 +28,24 @@ namespace CompactNavigationMenu
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int number = int.Parse(numbersubject.Text.ToString());
-            int max = int.Parse(maxsubject.Text.ToString());
-            if (number>=max)
+            try
             {
-                ans = 100;
+                float number = float.Parse(numbersubject.Text.ToString(), CultureInfo.InvariantCulture.NumberFormat);
+                float max = float.Parse(maxsubject.Text.ToString(), CultureInfo.InvariantCulture.NumberFormat);
+                if (number >= max)
+                {
+                    ans = 100;
+                }
+                else
+                {
+                    ans = (number * 1.0 / max) * 100;
+                }
+                outputText.Text = String.Format("شما {0} درصد پروژه را انجام دادید", ans);
             }
-            else
+            catch (Exception err)
             {
-                ans = (number * 1.0 / max)*100;
+                MessageBox.Show(err.ToString(), "خطای ناشناخته", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            outputText.Text = String.Format("شما {0} درصد پروژه را انجام دادید", ans);
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
@@ -45,5 +53,9 @@ namespace CompactNavigationMenu
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        private void maxsubject_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
