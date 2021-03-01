@@ -69,16 +69,20 @@ namespace CompactNavigationMenu.Views
                     double X = (10 / (fullX * 0.1)) / 100;
                     //hal nahsode be kol darsadi
                     double compPercent = X * compX;
+                    
                     if (compPercent < 0.85)
                     {
-                        outputText.Text += String.Format("متاسفانه شما فقط {0} درصد از ددلاین خود را انجام داده اید و مشمول جریمه می شوید", compPercent * 100);
+                        compPercent = Math.Round(compPercent*100, 4);
+                        outputText.Text += String.Format("متاسفانه شما فقط {0} درصد از ددلاین خود را انجام داده اید و مشمول جریمه می شوید", compPercent);
                         double notcomppercent = (fullX - compX) / fullX;
-                        double penalty = fullPenalty * notcomppercent;
-                        outputText.Text += String.Format("\n جریمه شما {0} تومان میشود ", penalty);
+                        double penalty = Math.Round(fullPenalty * notcomppercent, 2);
+                        int roundpenalty = (int)Math.Round(penalty / 100, 0)*100;
+                        outputText.Text += String.Format("\n جریمه شما {0} تومان میشود (قابل پرداخت : {1} تومان) ", penalty, roundpenalty);
                     }
                     else
                     {
-                        outputText.Text += String.Format("تبریک شما {0} درصد از ددلاین خود را انجام داده اید و مشمول جریمه نمی شوید", compPercent * 100);
+                        compPercent = Math.Round(compPercent * 100, 4);
+                        outputText.Text += String.Format("تبریک شما {0} درصد از ددلاین خود را انجام داده اید و مشمول جریمه نمی شوید", compPercent);
                     }
                 }
                 catch (Exception)
@@ -140,6 +144,16 @@ namespace CompactNavigationMenu.Views
         {
             Regex regex = new Regex("[^0-9.]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string temp="";
+            var window = new percentcalc();
+            window.ShowDialog();
+            temp = window.answer;
+            compProjectNumber.Text = temp;
+            
         }
     }
 }

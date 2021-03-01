@@ -1,0 +1,54 @@
+﻿<Window x:Class="CompactNavigationMenu.percentcalc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompactNavigationMenu"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="محاسبه درصد" Height="220" Width="270" MinWidth="270" MinHeight="220" MaxWidth="270" MaxHeight="220">
+    <Grid>
+        <TextBlock FontSize="13" FontWeight="Bold" 
+                       VerticalAlignment="Top" 
+                       Foreground="Black"
+                       Text=": تعداد تیتر اجباری " Margin="148,16,0,0" RenderTransformOrigin="0.5,0.5" Height="19" HorizontalAlignment="Left" Width="99"/>
+        <TextBox x:Name="maxsubject" FlowDirection="RightToLeft" Margin="14,15,0,0" 
+                 Text="" TextWrapping="Wrap" materialDesign:HintAssist.Hint="number" 
+                 materialDesign:HintAssist.IsFloating="True" RenderTransformOrigin="0.513,0.633" Padding="1,1,0,1" PreviewTextInput="NumberValidationTextBox" FontSize="12" HorizontalAlignment="Left" Width="108" Height="22" VerticalAlignment="Top">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="numbersubject" FlowDirection="RightToLeft" Margin="14,44,0,0" 
+            Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" materialDesign:HintAssist.Hint="number" 
+            materialDesign:HintAssist.IsFloating="True" RenderTransformOrigin="0.513,0.633" Padding="1,1,0,1" PreviewTextInput="NumberValidationTextBox" FontSize="12" HorizontalAlignment="Left" Width="108">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBlock FontSize="13" FontWeight="Bold" 
+            VerticalAlignment="Top" 
+            Foreground="Black"
+            Text=": تعداد تیتر انجام شده " Margin="128,45,0,0" RenderTransformOrigin="0.5,0.5" Height="19" HorizontalAlignment="Left" Width="119"/>
+        <Button x:Name="computebtn" Content="محاسبه درصد" Height="21" VerticalAlignment="Top" Click="Button_Click" TextElement.FontWeight="Bold" TextElement.FontSize="12" Margin="14,77,0,0" HorizontalAlignment="Left" Width="225">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="54" Margin="16,111,0,0" VerticalAlignment="Top" Width="225"/>
+        <TextBlock x:Name="outputText" FontSize="12" FontWeight="Medium" 
+            VerticalAlignment="Top" 
+            Foreground="Black"
+            FlowDirection="RightToLeft"
+            TextAlignment="Left"
+            TextWrapping="Wrap"
+            Text="" Margin="19,115,0,0" Padding="2,1,2,1" HorizontalAlignment="Left" Width="219" RenderTransformOrigin="0.5,0.5" Height="47"/>
+
+    </Grid>
+</Window>

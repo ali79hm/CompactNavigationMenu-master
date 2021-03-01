@@ -107,13 +107,20 @@
             VerticalAlignment="Top" 
             Foreground="Black"
             Text="%" Margin="436,117,0,0" HorizontalAlignment="Left" Width="12" RenderTransformOrigin="0.406,0.646" Height="13"/>
-        <TextBlock x:Name="outputText_Copy" FontSize="13" FontWeight="Medium" 
+        <TextBlock FontSize="13" FontWeight="Medium" 
             VerticalAlignment="Top" 
             Foreground="Black"
             FlowDirection="RightToLeft"
             TextAlignment="Left"
             TextWrapping="Wrap"
             Text="چند نکته &#x0a; => حداکثر جریمه 30 هزار تومان تعین شده &#x0a; => به درصد های موفقیت بالای 85 درصد جریمه تعلق نمیگیرد &#x0a;=> ضریب پروژه 5 برابر ویدئو است &#x0a;=> درصد پروژه بر حسب تعداد تیتر های اجباری انجام شده محاسبه میشود" Margin="32,300,0,0" HorizontalAlignment="Left" Width="566" RenderTransformOrigin="0.5,0.5" Height="97"/>
+        <Button Content="محاسبه درصد" HorizontalAlignment="Left" Height="24" Margin="253,111,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </UserControl>
     
